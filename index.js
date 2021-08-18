@@ -12,7 +12,7 @@ function timer() {
     if (!timer_on) {
         document.body.style.backgroundColor = '#eb3434';
         timer_on = true;
-        let time = Math.random()*5000 + 300;
+        let time = Math.random()*4000 + 500;
         timer_func = setTimeout(() => document.body.style.backgroundColor = '#34eb3a' , time);
         set_timer = setTimeout(setReactionTimer, time);
     }
@@ -62,3 +62,5 @@ function reset_average(){
     count = 0;
     document.getElementById('average').innerText  = "Average: ";
 }
+
+window.onmousedown = timer;

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Reaction timer</title>
-        <script src="index.js"></script>
+        <script src="index.js" defer></script>
     </head>
 
-    <body style="background-color:#eb3434" onclick="timer()">
+    <body style="background-color:#eb3434">
         <div style = "margin: auto; top: 50%; text-align: center; width: 75%;">
             <h1 style = "color:white;">Click window when it turns green to test reaction time! <br> Click to begin.</h1>
             <h3 id = "best_score" style = "color:white;">Best score:</h3>
-            <button onclick="reset_best();">reset best score</button>
+            <button onclick="reset_best();">Reset best score</button>
             <h3 id = "average" style = "color:white;">Average:</h3>
-            <button onclick="reset_average();">reset average</button>
+            <button onclick="reset_average();">Reset average</button>
         </div>
 
     </body>
