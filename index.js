@@ -63,4 +63,6 @@ function reset_average(){
     document.getElementById('average').innerText  = "Average: ";
 }
 
-window.onmousedown = timer;
+//window.onmousedown = timer;
+//window.ontouchend = timer;
+window.onclick = timer;
