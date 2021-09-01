@@ -4,26 +4,28 @@ let timer_func = null;
 let set_timer = null;
 let best_score = 0;
 
-let sum = 0
-let count = 0
+let sum = 0;
+let count = 0;
+
+let mainContent = document.getElementById('main');
+
 function timer() {
-    document.body.firstElementChild.firstElementChild.innerText = '';
+    mainContent.firstElementChild.innerText = '';
 
     if (!timer_on) {
-        document.body.style.backgroundColor = '#eb3434';
+        mainContent.style.backgroundColor = '#eb3434';
         timer_on = true;
         let time = Math.random()*4000 + 500;
-        timer_func = setTimeout(() => document.body.style.backgroundColor = '#34eb3a' , time);
+        timer_func = setTimeout(() => mainContent.style.backgroundColor = '#34eb3a' , time);
         set_timer = setTimeout(setReactionTimer, time);
     }
     else {
         if (start_time == 0) {
-            document.body.firstElementChild.firstElementChild.innerText = 'Too early! Try again.';
+            mainContent.firstElementChild.innerText = 'Too early! Try again.';
         }
         else {
             const reaction_time = (Date.now() - start_time)/1000;
-            console.log(reaction_time);
-            document.body.firstElementChild.firstElementChild.innerText = reaction_time;
+            mainContent.firstElementChild.innerText = reaction_time;
             if (best_score == 0 || reaction_time < best_score) {
                 best_score = reaction_time;
                 document.getElementById('best_score').innerText  = "Best score: " + reaction_time;
@@ -63,6 +65,5 @@ function reset_average(){
     document.getElementById('average').innerText  = "Average: ";
 }
 
-//window.onmousedown = timer;
-//window.ontouchend = timer;
-window.onclick = timer;
+mainContent.onmousedown = timer;
+mainContent.ontouchstart = timer;
